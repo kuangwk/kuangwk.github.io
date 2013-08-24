@@ -1,0 +1,30 @@
+*{
+	margin: 0;
+	padding: 0
+}
+h1{
+	font-family: Arial;
+	text-align: center;
+	font-size: 80px;
+}
+#can{
+	margin: 10px auto;
+	border: 5px solid #e1e1e1;
+	display : block;
+	-webkit-border-radius: 20px;
+	background-color: #e8e8e8;
+}
+
+button{
+	background-color: #3344aa;
+	width: 100px;
+	height: 40px;
+	-webkit-border-radius: 10px;
+	texg-align: center;
+	margin-left : 600px;
+	margin-right : -600px;
+}
+
+button:hover{
+	background-color: blue;
+}
