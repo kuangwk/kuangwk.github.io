@@ -1,0 +1,58 @@
+<html>
+<head>
+    <title></title>
+    <meta chatset='utf-8' />
+    <link rel="stylesheet" type="text/css" href="./style.css">
+</head>
+<body>
+
+    <div class='box box1' onclick='right()'>1</div>
+    <div class='box box2' onclick='right()'>2</div>
+    <div class='box box3' onclick='right()'>3</div>
+    <div class='box4' onclick='jump()'>3</div>
+
+
+    <script type="text/javascript" src='http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js'></script>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/gsap/1.10.3/plugins/CSSPlugin.min.js"></script>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/gsap/1.10.3/easing/EasePack.min.js"></script>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/gsap/1.10.3/TweenLite.min.js"></script> 
+
+    <script type="text/javascript" src='./tween.js'></script>
+    <script type="text/javascript">
+        var tween = new Tween();
+        console.log(tween);
+        var current = 'box1';
+        var next= 'box2';
+        var last = 'box3';
+        function right (event) {
+            if (current === 'box1') {
+                last = 'box1'
+                next = 'box3'
+                current = 'box2'
+            } else if (current === 'box2') {
+                next = 'box1'
+                last = 'box2'
+                current = 'box3'                
+            } else {
+                current = 'box1'                
+                next = 'box2'
+                last = 'box3'
+            }
+
+            TweenLite.fromTo('div.'+ current ,0.5,tween.top.start,tween.top.end);
+            TweenLite.fromTo('div.'+ next,0.5,tween.left.start,tween.left.end);
+            TweenLite.fromTo('div.'+ last,0.5,tween.right.start,tween.right.end);
+
+        }
+
+        function jump() {
+            var $box4 = $('div.box4');
+            var tween = TweenLite.to($box4,1,{transform:"rotate:(30deg)"});
+
+
+
+        }
+
+    </script>
+</body>
+</html>
