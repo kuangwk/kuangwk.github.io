@@ -20,6 +20,7 @@
 }
 
 .box4 {
+    border-radius: 0px 100px 100px 100px;   
     position: absolute;
     width: 100px;
     height: 100px;

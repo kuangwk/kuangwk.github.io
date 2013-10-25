@@ -9,13 +9,14 @@
     <div class='box box1' onclick='right()'>1</div>
     <div class='box box2' onclick='right()'>2</div>
     <div class='box box3' onclick='right()'>3</div>
-    <div class='box4' onclick='jump()'>3</div>
+    <div class='box4' onclick='jump()'></div>
 
 
     <script type="text/javascript" src='http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js'></script>
-    <script src="http://cdnjs.cloudflare.com/ajax/libs/gsap/1.10.3/plugins/CSSPlugin.min.js"></script>
-    <script src="http://cdnjs.cloudflare.com/ajax/libs/gsap/1.10.3/easing/EasePack.min.js"></script>
-    <script src="http://cdnjs.cloudflare.com/ajax/libs/gsap/1.10.3/TweenLite.min.js"></script> 
+    <!--// <script src="http://cdnjs.cloudflare.com/ajax/libs/gsap/1.10.3/plugins/CSSPlugin.min.js"></script>
+    // <script src="http://cdnjs.cloudflare.com/ajax/libs/gsap/1.10.3/easing/EasePack.min.js"></script>
+    // <script src="http://cdnjs.cloudflare.com/ajax/libs/gsap/1.10.3/TweenLite.min.js"></script> -->
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/gsap/1.10.3/TweenMax.min.js"></script>
 
     <script type="text/javascript" src='./tween.js'></script>
     <script type="text/javascript">
@@ -44,15 +45,20 @@
             TweenLite.fromTo('div.'+ last,0.5,tween.right.start,tween.right.end);
 
         }
-
+        var t1;
         function jump() {
             var $box4 = $('div.box4');
-            var tween = TweenLite.to($box4,1,{transform:"rotate:(30deg)"});
-
-
-
+            // TweenMax.to($box4,1,)
+            t1 = TweenMax.to($box4,.5,{rotation:360,repeat:-1,ease:Linear.easeNone})
         }
+        // function jump() {
+        //     var $box4 = $('div.box4');
+        //     t1 = TweenLite.fromTo($box4,1,{rotation:0,},{rotation:360,onComplete:test})
+        // }
 
+        // function test () {
+        //         t1.restart();
+        //     }
     </script>
 </body>
 </html>
