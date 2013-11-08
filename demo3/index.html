@@ -10,12 +10,13 @@
     <div class='box box2' onclick='right()'>2</div>
     <div class='box box3' onclick='right()'>3</div>
     <div class='box4' onclick='jump()'></div>
+    <div class='box5' onclick='strink()'>
 
 
     <script type="text/javascript" src='http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js'></script>
-    <!--// <script src="http://cdnjs.cloudflare.com/ajax/libs/gsap/1.10.3/plugins/CSSPlugin.min.js"></script>
-    // <script src="http://cdnjs.cloudflare.com/ajax/libs/gsap/1.10.3/easing/EasePack.min.js"></script>
-    // <script src="http://cdnjs.cloudflare.com/ajax/libs/gsap/1.10.3/TweenLite.min.js"></script> -->
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/gsap/1.10.3/plugins/CSSPlugin.min.js"></script>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/gsap/1.10.3/easing/EasePack.min.js"></script>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/gsap/1.10.3/TweenLite.min.js"></script> 
     <script src="http://cdnjs.cloudflare.com/ajax/libs/gsap/1.10.3/TweenMax.min.js"></script>
 
     <script type="text/javascript" src='./tween.js'></script>
@@ -50,6 +51,16 @@
             var $box4 = $('div.box4');
             // TweenMax.to($box4,1,)
             t1 = TweenMax.to($box4,.5,{rotation:360,repeat:-1,ease:Linear.easeNone})
+        }
+
+        function strink() {
+          var t1;
+          var $box5 = $('div.box5')
+          t1 = new TimelineLite()
+          // tl = new TimelineLite()
+          t1.to($box5, 0, {transformOrigin: "50% 50% ",scaleX:1,scaleY:1})
+            .to($box5, 0.4, {transformOrigin: "50% 50% ",scaleX:0,scaleY:0})
+            .to($box5, .3, {transformOrigin: "50% 50% ",scaleX:0.3,scaleY:0.3});
         }
         // function jump() {
         //     var $box4 = $('div.box4');

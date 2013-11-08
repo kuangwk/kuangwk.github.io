@@ -21,10 +21,20 @@
 
 .box4 {
     border-radius: 0px 100px 100px 100px;   
-    position: absolute;
     width: 100px;
+    position: absolute;
     height: 100px;
     background: #eda;
     left: 200px;
     top: 600px;
+}
+
+.box5 {
+  width: 100px;
+  height: 100px;
+  position: absolute;
+  border-radius: 100px 100px 100px 100px;   
+  left: 600px;
+  top: 600px;
+  background: #00c09b
 }
