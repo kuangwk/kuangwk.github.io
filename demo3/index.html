@@ -10,6 +10,7 @@
     <div class='box box2' onclick='right()'>2</div>
     <div class='box box3' onclick='right()'>3</div>
     <div class='box4' onclick='jump()'></div>
+    <div class='box4' style='top:300px'></div>
     <div class='box5' onclick='strink()'>
 
 
@@ -50,7 +51,10 @@
         function jump() {
             var $box4 = $('div.box4');
             // TweenMax.to($box4,1,)
-            t1 = TweenMax.to($box4,.5,{rotation:360,repeat:-1,ease:Linear.easeNone})
+            t1 = TweenLite.fromTo('div.box4',1,{rotation:0},{rotation:360,ease:Strong.easeInOut,onComplete:restart})
+            function restart () {
+              t1.restart()
+            }
         }
 
         function strink() {

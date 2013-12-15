@@ -38,3 +38,13 @@
   top: 600px;
   background: #00c09b
 }
+
+.box6 {
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  left: 700px;
+  top: 400px;
+  background: #00c09b
+
+}
