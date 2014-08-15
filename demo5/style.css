@@ -1,0 +1,95 @@
+body {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+div.wrapper {
+  width: 100%;
+  height: 100%;
+  background: #c9151e;
+  color: #fff;
+  font-size: 12px;
+  overflow: hidden;
+}
+
+div.cycle {
+  border-radius: 50%;
+  background: #fff;
+  position: absolute;
+}
+
+div.cycle img.logo {
+  position: absolute;
+}
+
+div.big-cy {
+  width: 100px;
+  height: 100px;
+  top: 12.5%;
+  left: 50%;
+  margin-left: -58px;
+  border: 8px solid #982429;
+}
+
+div.middle-cy {
+  width: 20px;
+  height: 20px;
+  top: 30px;
+  left: 130px;
+  border: 4px solid #982429;
+}
+div.small-cy {
+  width: 10px;
+  height: 10px;
+  top: 100px;
+  left: 100px;
+  border: 3px solid #982429;
+}
+
+div.middle-sec {
+  position: absolute;
+  left: 50%;
+  margin-left: -150px;
+  width: 300px;
+  top: 40%;
+}
+
+div.left-arr {
+  position: absolute;
+  left: 10px;
+  width: 48px;
+  height: 122px;
+  background-image: url('left-right-arrow.png');
+  background-repeat: no-repeat;
+}
+
+div.middle-sec h1 {
+  text-align: center;
+}
+
+div.middle-sec h2 {
+  text-align: center;
+}
+
+div.right-arr {
+  position: absolute;
+  right: 10px;
+  top: 40px;
+  width: 48px;
+  height: 122px;
+  background-position: 0 -118px;
+  background-image: url('left-right-arrow.png');
+  background-repeat: no-repeat;
+}
+
+div.bottom-sec {
+  position: absolute;
+  width: 100%;
+  top: 64%;
+  text-align: center;
+  font-size: 18px;
+}
+
