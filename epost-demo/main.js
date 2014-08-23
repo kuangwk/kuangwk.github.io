@@ -16,7 +16,7 @@ var currentHeight = 0;
 var snap = {
   y: function (endHeight) {
     endHeight = Math.abs(endHeight);
-    if (Math.abs(endHeight - currentHeight) / pageHeight >= 0.5) {
+    if (Math.abs(endHeight - currentHeight) / pageHeight >= 0.3) {
       if (endHeight - currentHeight > 0) {
         currentHeight += pageHeight;
         return currentHeight;
@@ -31,7 +31,7 @@ var snap = {
 }
 
 Draggable.create('main', {type:'scrollTop',
-                          edgeResistance:0.8,
+                          edgeResistance:0.5,
                           throwProps:true,
                           snap: snap, 
                           ease: Quart.easeOut,
