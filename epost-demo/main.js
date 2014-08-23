@@ -33,4 +33,8 @@ var snap = {
 Draggable.create('main', {type:'scrollTop',
                           edgeResistance:0.8,
                           throwProps:true,
-                          snap: snap});
+                          snap: snap, 
+                          ease: Quart.easeOut,
+                          maxDuration: 0.7 
+
+                        });
