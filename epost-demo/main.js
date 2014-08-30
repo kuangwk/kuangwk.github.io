@@ -1,14 +1,6 @@
-// $('.page').on('touchstart', function (a) {
-//   console.log(a)
-//   console.log(a.touches[0].pageX);
-// })
-
-
-
-// $('.page').on('touchend', function (event) {
-//   console.log(event.pageX);
-// })
-console.log(TweenMax)
+window.onload = function () {
+  $('#loading').fadeOut();
+}
 
 pageHeight = window.innerHeight;
 var currentHeight = 0;
@@ -17,6 +9,7 @@ var currentHeight = 0;
 window.addEventListener('resize', function () {
   pageHeight = window.innerHeight;
   console.log(pageHeight)
+  
   alert('pageHeight', pageHeight);
 })
 
@@ -46,5 +39,4 @@ Draggable.create('main', {type:'scrollTop',
                           snap: snap, 
                           ease: Quart.easeOut,
                           maxDuration: 0.7 
-
                         });

@@ -3,40 +3,34 @@
   <title></title>
   <meta charset='utf-8'>
   <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
-  <link rel="stylesheet" type="text/css" href="style.css">
+
+  <!-- main style -->
+  <link rel="stylesheet" type="text/css" href="style/style.css">
+
+  <!-- lib -->
   <script src="lib/jquery-2.1.1.min.js"></script>
   <script src="lib/greensock/TweenMax.min.js"></script>
   <script src='lib/greensock/utils/Draggable.min.js'></script>
   <script src='lib/greensock/plugins/ThrowPropsPlugin.min.js'></script>
+
 </head>
 <body>
   <main>
+
     <section id='loading'>
-      <h1>loading</h1>  
     </section>
+
     <section class='page' id='open-page'>
-      <h1>open page</h1> 
     </section>
-    <section class='page' id='sec1'>
-      <h1>This is </h1>
-      <h2>page </h2>
-      <p>one</p>
+
+    <section id='pages'>
     </section>
-    <section class='page' id="sec2">
-      <h1>This is </h1>
-      <h2>page </h2>
-      <p>two</p>
-    </section>
-    <section class='page' id="sec3">
-      <h1>This is </h1>
-      <h2>page </h2>
-      <p>three</p>
-    </section>
+
     <section class='page' id='end-page'>
-      <h1>end page</h1>
     </section>
+
   </main>
 
-  <script type="text/javascript" src='main.js'></script>
+  <script data-main='main.js' src='lib/require.js'></script>
 </body>
 </html>
