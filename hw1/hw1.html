@@ -3,7 +3,7 @@
     <title></title>
 </head>
 <body>
-    <canvas id='canvas' width=500 height=800></canvas>
+    <canvas id='canvas' width=650 height=600></canvas>
 
     <script>
         var PIC_WIDTH = 300
@@ -16,13 +16,13 @@
 
         img.onload = function () {
             ctx.drawImage(img, 0, 0);
-            img = ctx.getImageData(0, 0, 30, 500);
+            img = ctx.getImageData(0, 0, 300, 533);
             img = setToGray(img);
-            ctx.putImageData(img, 0, 0)
+            ctx.putImageData(img, PIC_WIDTH + 10, 0)
         }
 
         function setToGray (img) {
-            for (var i=0; i < PIC_WIDTH * PIC_HEIGHT; i+=4 ) {
+            for (var i=0; i < PIC_WIDTH * PIC_HEIGHT * 4; i+=4 ) {
                 var red = img.data[i];
                 var green = img.data[i+1];
                 var blue = img.data[i+2];
@@ -31,10 +31,10 @@
                 img.data[i+1] = gray
                 img.data[i+2] = gray
             }
+            return img
         }
 
-        img.src = './1.png';
-
+        img.src = 'http://localhost:3000/hw1/1.png';
     </script>
 </body>
 </html>
