@@ -1,0 +1,36 @@
+<html>
+<head>
+    <title></title>
+</head>
+<style>
+    div.scale-wrapper {
+        margin-top: 20px;
+        position: relative;
+        width: 120px;
+        height: 20px;
+        border: 1px solid #ccc;
+        background: #ddd;
+    } 
+
+    div.scale-button {
+        position: absolute;
+        width: 20px;
+        height: 20px;
+        background: #bbb;
+        cursor: pointer;
+        top: 0;
+        left: 0;
+    }
+</style>
+
+<body>
+    <canvas id='canvas' width=300 height=250></canvas>
+    <div class="scale-wrapper">
+        <div class="scale-button" id='scale-btn'></div>
+    </div>
+    <p>current percentage: <span id='percentage'>0</span></p>
+
+    <script src='main.js'></script>
+
+</body>
+</html>
