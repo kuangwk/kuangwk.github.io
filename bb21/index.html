@@ -1,0 +1,103 @@
+<html>
+<head>
+    <title></title>
+    <meta charset='utf-8' />
+    <link rel="stylesheet" href="css/css/style.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+</head>
+<body>
+
+    <div id="wrapper">
+        <div class="end-line"></div>
+    </div>
+    <div id="right">
+        <p class='score-box'><span id="score">0000</span></p>
+        <div id="next-bricks-wrapper">
+            <p>将要出现砖块</p>
+        </div>
+        <div id="pause"></div>
+    </div>
+    <div id="popup-pages">
+        <div id="start-page">
+            <h1 id='highest-score'>0</h1>
+            <div class='button' id='start'></div>
+            <div class='button share-btn' id='share'></div>
+        </div>
+        <div id="pause-page">
+            <div class="mask"></div>
+            <div class="box">
+                <div class='btn' id="continue"></div>
+                <div class='btn' id="back-to-home"></div>
+                <div class='btn' id="course"></div>
+                <div class='btn' id="replay"></div>
+            </div>
+        </div>
+        <div id="end-page">
+            <div class="mask"></div>
+            <div class="box">
+                <p class='first'>你消除了</p>
+                <p class='second'><span id='final-score'>0</span>块砖</p>
+                <p class='third' id='final-rank'></p>
+                <p class='forth'>靠！你真是牛逼爆了！</p>
+                <div class="end-buttons">
+                    <div class="btn" id='end-replay'></div>
+                    <div class="btn share-btn" id='end-share'></div>
+                </div>
+            </div>
+        </div>
+        <div id="how-to-play-page">
+            <div class='how-to-play' id="how-to-play1">
+            </div>
+            <div class='how-to-play' id="how-to-play2">
+            </div>
+        </div>
+        <div id="share-page">
+            <div class="mask"></div>
+            <div id="share-tips"></div>
+        </div>
+    </div>
+
+
+    <script>
+    function shareFriend() {
+        data = share.getShareFriendData()
+        WeixinJSBridge.invoke('sendAppMessage', data, function(res) {
+        });
+    }
+
+    function shareTimeline() {
+        data = share.getShareTimelineData()
+        WeixinJSBridge.invoke('shareTimeline', data, function(res) {
+        });
+    }
+
+    function shareWeibo() {
+        WeixinJSBridge.invoke('shareWeibo',{
+            "content": share.data.desc,
+            "url": share.data.link
+        }, function(res) {
+        });
+    }
+    // 当微信内置浏览器完成内部初始化后会触发WeixinJSBridgeReady事件。
+    document.addEventListener('WeixinJSBridgeReady', function onBridgeReady() {
+        // 发送给好友
+        WeixinJSBridge.on('menu:share:appmessage', function(argv){
+            shareFriend();
+        });
+        // 分享到朋友圈
+        WeixinJSBridge.on('menu:share:timeline', function(argv){
+            shareTimeline();
+        });
+        // 分享到微博
+        WeixinJSBridge.on('menu:share:weibo', function(argv){
+            shareWeibo();
+        });
+    }, false);
+    </script>
+
+
+
+    <script src='lib/zepto.js'></script>
+    <script src='js/main.min.js'></script>
+</body>
+</html>
