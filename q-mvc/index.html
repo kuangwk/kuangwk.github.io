@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+
+<body>
+	<div id="demo" style="display:none">
+		<h1 q-text="title"></h1>
+		<input type="text" />
+		<button q-on='click:addItem'>+</button>
+		<ul>
+			<li q-repeat='todos'>
+				<input type="checkbox" q-attr='checked:isDone' q-on='click:checkItem(this, e)' />
+				<span q-text='text' q-middleline='isDone'></span>
+				<button q-on="click:deleteItem(this)">-</button>
+			</li>
+		</ul>
+	</div>
+	<div id="loading">loading...</div>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/zepto/1.0/zepto.min.js"></script>
+	<script src="https://rawgit.com/imweb/Q.js/master/dist/Q.zepto.min.js"></script>
+	<script src="./main.js"></script>
+</body>
+
+</html>
