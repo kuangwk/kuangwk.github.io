@@ -1,0 +1,11 @@
+<h1>Messages</h1>
+<ul>
+{{each messages}}
+  <li>
+    <a href='javascript:void(0)' data-id="{{$value.id}}">{{$value.title}}</a>
+    <p>{{$value.content}}</p>
+    <p>{{$value.from}}</p>
+  </li>
+{{/each}}
+<script src='../js/hoods.js'></script>
+</ul>

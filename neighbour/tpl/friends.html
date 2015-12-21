@@ -1,0 +1,27 @@
+<h1>Friends</h1>
+<ul>
+{{each friends}}
+  <li class="friend-item">
+    <span data-id="{{$value.id}}">{{$value.name}}</span>
+    <button class='btn btn-xs btn-danger js-remove' data-id="{{$value.id}}">remove</button>
+  </li>
+{{/each}}
+</ul> 
+
+<h2>Add Friend</h2>
+<form class="form-add-friend" action="">
+  <input name="friend-name" type="text" class="form-control" placeholder="Input friend's name" required="" autofocus="true">
+  <button class="btn btn-success btn-block js-add-friend" >add friend</button>
+</form>
+
+<h2>Invitations</h2>
+<ul>
+{{each invitations}}
+  <li class="invitation-item">
+    <span data-id="{{$value.id}}">{{$value.name}}</span>
+    <button class='btn btn-xs btn-success js-agree' data-id="{{$value.id}}">agree</button>
+    <button class='btn btn-xs btn-danger js-reject' data-id="{{$value.id}}">reject</button>
+  </li>
+{{/each}}
+</ul> 
+<script src="../js/friends.js"></script>

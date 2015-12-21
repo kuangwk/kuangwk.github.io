@@ -1,0 +1,11 @@
+<h1>blocks</h1>
+<ul>
+{{each blocks}}
+  <li class='js-blocks'>
+    <span href='javascript:void(0)' data-id="{{$value.id}}">{{$value.name}}</span>
+    <button class='btn btn-xs btn-primary js-join-block' data-id="{{$value.id}}">join</button>
+  </li>
+{{/each}}
+</ul> 
+<button class="btn btn-s btn-week js-back-hoods">back</button>
+<script src='../js/hoods.js'></script>
