@@ -25,6 +25,6 @@
         };
         var html_post = template('friends', data);
         $('#main').html(html_post);
-        setTabActive(2);
+        setTabActive(3);
     });
 })();

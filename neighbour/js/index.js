@@ -2,9 +2,8 @@
 (function() {
 
 var isLogin = $.cookie('is_login');
-console.log('is_login', isLogin);
 
-if (isLogin === 'false') {
+if (!isLogin || isLogin === 'false') {
   var html_login = template('login');
   $('#main').html(html_login);
   return;

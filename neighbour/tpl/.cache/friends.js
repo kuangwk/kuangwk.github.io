@@ -1,4 +1,4 @@
-/*TMODJS:{"version":1,"md5":"13eef481473e3d4fb24a98b9e4d60756"}*/
+/*TMODJS:{"version":1,"md5":"3b3372adb67252f03f8e5f11205e8dd8"}*/
 template('friends',function($data,$filename
 /**/) {
 'use strict';var $utils=this,$helpers=$utils.$helpers,$each=$utils.$each,friends=$data.friends,$value=$data.$value,$index=$data.$index,$escape=$utils.$escape,invitations=$data.invitations,$out='';$out+='<h1>Friends</h1> <ul> ';
@@ -23,6 +23,6 @@ $out+='">agree</button> <button class=\'btn btn-xs btn-danger js-reject\' data-i
 $out+=$escape($value.id);
 $out+='">reject</button> </li> ';
 });
-$out+=' </ul> <script src="../js/friends.js"></script>';
+$out+=' </ul> <script src="./js/friends.js"></script>';
 return new String($out);
 });

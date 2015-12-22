@@ -35,8 +35,23 @@
         var $this = $(this);
         var id = $this.data('id');
         var name = $this.closest('li').find('span').text();
-        confirm('Are you sure?') && $.ajax({
-            url: '/agree-friend',
+        $.ajax({
+            url: '/agree_friend',
+            type: 'POST',
+            data: {
+                id: id
+            },
+            success: function() {
+                $this.closest('li').remove();
+            }
+        });
+    });
+    $('.js-reject').on('click', function(e) {
+        var $this = $(this);
+        var id = $this.data('id');
+        var name = $this.closest('li').find('span').text();
+        $.ajax({
+            url: '/reject_friend',
             type: 'POST',
             data: {
                 id: id

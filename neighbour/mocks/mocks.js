@@ -28,29 +28,36 @@ window.MOCKS = {
     }],
 
     messages: [{
-        title: 'this is a title',
+        title: 'this is a private',
         content: 'i am a content',
         from: 'jijilong',
         from_id: '1',
-        type: 'block'
+        type: 'private'
     }, {
-        title: 'this is a title2',
+        title: 'this is a friend',
         content: 'i am a content2',
         from: 'jijilong',
         from_id: '1',
-        type: 'priviate'
+        type: 'friend'
+    }, {
+        title: 'this is a block',
+        content: 'i am a content2',
+        from: 'jijilong',
+        from_id: '1',
+        type: 'block'
     }],
+
     friends: [{
         id: 5,
-        name: 'jiji'        
-    },{
+        name: 'jiji'
+    }, {
         id: 6,
         name: 'hu'
     }],
     invitations: [{
         id: 3,
         name: 'jiji'
-    },{
+    }, {
         id: 4,
         name: 'tt'
     }]
@@ -58,15 +65,36 @@ window.MOCKS = {
 
 // mock ajax server
 $.mockjax({
-  url: "/login",
-  responseText: {
-    status: "success",
-    user: {
-      id: 1,
-      nick_name: 'jijilong',
-      email: 'q@qq.com'
+    url: "/login",
+    response: function(setting) {
+        var data = setting.data;
+        if (data.email === 'q@qq.com' && data.password === '1') {
+            this.responseText = {
+                status: "success",
+                user: {
+                    id: 1,
+                    nick_name: 'jijilong',
+                    email: 'q@qq.com'
+                }
+            }
+        } else {
+            this.responseText = {
+                status: 'fail',
+                msg: 'login fail'
+            }
+        }
     }
-  }
+});
+$.mockjax({
+    url: "/signup",
+    responseText: {
+        status: "success",
+        user: {
+            id: 1,
+            nick_name: 'jijilong',
+            email: 'q@qq.com'
+        }
+    }
 });
 
 $.mockjax({
@@ -82,8 +110,25 @@ $.mockjax({
     }
 });
 $.mockjax({
-    url: "/agree-friend",
+    url: "/agree_friend",
     responseText: {
         status: "success",
+    }
+});
+$.mockjax({
+    url: "/reject_friend",
+    responseText: {
+        status: "success",
+    }
+});
+
+$.mockjax({
+    url: "/get_messages",
+    response: function(setting) {
+        var type = setting.data.type
+        this.responseText = {
+            status: 'success',
+            messages: type === 0 ? MOCKS.messages : [MOCKS.messages[type - 1]]
+        }
     }
 });
