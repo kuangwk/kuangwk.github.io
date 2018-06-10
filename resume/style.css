@@ -271,21 +271,3 @@ body {
     color: #999;
     transform: scale(0.8);
 }
-
-@media (min-width: 2768px) {
-    .page-resume {
-        display: flex;
-    }
-    .header, .container {
-        flex: 1;
-    }
-    .header {
-        min-height: 560px;
-    }
-    .container {
-        display: flex;
-        margin-left: 20px;
-        flex-direction: column;
-        justify-content: center;
-    }
-}
