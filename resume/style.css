@@ -250,7 +250,7 @@ body {
     transform: scaleX(0.8);
 }
 .skill-item.half .item-progress-bar .bar-percent {
-    transform: scaleX(0.5);
+    transform: scaleX(0.6);
 }
 .skill-item:hover .item-progress-bar .bar-percent {
     animation: progressInit 0.6s both;
