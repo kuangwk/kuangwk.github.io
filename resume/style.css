@@ -199,6 +199,9 @@ body {
     font-size: 13px;
     line-height: 24px
 }
+.experience-list .item-desc a {
+    color: #666;
+}
 .experience-list .item-name {
     margin-bottom: 10px;
     line-height: 1.5;
