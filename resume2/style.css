@@ -1,0 +1,276 @@
+body {
+    max-width: 1200px;
+    /* min-width: 800px; */
+    margin: 0 auto;
+    padding-bottom: 20px;
+}
+
+.header {
+    background: #00c09b;
+    position: relative;
+}
+.header-inner {
+    min-height: 480px;
+    height: 600px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    position: relative;
+}
+.header .bg {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    background: url(./img/bg2.png) repeat -1px -19px;
+    opacity: .6;
+    animation: flashing 4s linear infinite;
+}
+@keyframes flashing {
+    0% {
+        opacity: .3;
+    }
+    50% {
+        opacity: .6;
+    }
+    to {
+        opacity: .3;
+    }
+}
+.header .user-avatar {
+    border-radius: 50%;
+    width: 120px;
+    height: 120px;
+    box-shadow: 0 0 0 5px rgba(255,255,255, 0.3);
+    margin-bottom: 15px;
+    background: #fff;
+}
+.header .user-avatar:hover {
+    animation: shadowSpread 1s infinite;
+}
+@keyframes shadowSpread {
+    0% {
+        box-shadow: 0 0 1px 1px rgba(255, 255, 255, 0.3);
+    }
+    50% {
+        box-shadow: 0 0 10px 6px rgba(255, 255, 255, 0.3);
+    }
+    100% {
+        box-shadow: 0 0 1px 1px rgba(255, 255, 255, 0.3);
+    }
+}
+.header .user-name {
+    font-size: 24px;
+}
+.header .user-slogan {
+    margin-bottom: 30px;
+}
+.header a {
+    color: #fff;
+}
+.contact-list {
+    margin-bottom: 20px;
+}
+.contact-list .contact-item{
+    margin-bottom: 10px;
+}
+.contact-item .item-icon {
+    display: inline-block;
+    vertical-align: middle;
+    border: 1px solid #fff;
+    border-radius: 50%;
+    text-align: center;
+    margin-right: 5px;
+    width: 24px;
+    height: 24px;
+}
+
+.icon-email,
+.icon-phone,
+.icon-github {
+    width: 18px;
+    height: 18px;
+    vertical-align: middle;
+    fill: #fff;
+}
+.icon-email {
+    width: 14px;
+    height: 14px;
+}
+.basic-list {
+    border: 1px solid #01bb96;
+    border-radius: 5px;
+    width: 300px;
+    padding: 10px 0;
+    box-shadow: 0 0 0 2px rgba(255,255,255, 0.3);
+    font-size: 13px;
+    color: #ededed;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around
+}
+.basic-list .basic-item {
+    float: left;
+    width: 120px;
+    padding: 5px 0;
+}
+
+/* section */
+.section {
+    padding: 20px 0;
+}
+.section-hd {
+    position: relative;
+    text-align: center;
+    margin-bottom: 20px;
+}
+.section-hd::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 1px;
+    background: #ccc;
+    left: 0;
+    top: 50%;
+}
+.section-tt {
+    position: relative;
+    display: inline-block;
+    font-size: 18px;
+    line-height: 3;
+    background: #f5f5f5;
+    padding: 0 10px;
+    color: #00c09b;
+}
+
+/* 工作经验 */
+.experience-list {
+    position: relative;
+    padding: 0 20px 0 40px;
+}
+.experience-list::before {
+    content: "";
+    position: absolute;
+    width: 5px;
+    left: 20px;
+    top: 10px;
+    bottom: -10px;
+    background: linear-gradient(to bottom, #ccc 85%, rgba(0, 0, 0, 0)) no-repeat;
+    background-size: 1px 100%;
+
+}
+.experience-list .experience-item {
+    margin-bottom: 20px;
+    position: relative;
+}
+.experience-list .experience-item:last-child {
+    margin-bottom: 0;
+}
+.experience-list .experience-item::before {
+    content: "";
+    position: absolute;
+    top: 5px;
+    left: -24px;
+    width: 10px;
+    height: 10px;
+    background: #00c09b;
+    border-radius: 50%;
+    box-shadow: 0 0 0 3px rgba(24, 142, 238, 0.2);
+}
+.experience-list .experience-item:hover::before {
+    animation: spread 1s infinite;
+}
+@keyframes spread {
+    0% {
+        box-shadow: 0 0 1px 1px rgba(24, 142, 238, 0.2);
+    }
+    50% {
+        box-shadow: 0 0 5px 5px rgba(24, 142, 238, 0.2);
+    }
+    100% {
+        box-shadow: 0 0 1px 1px rgba(24, 142, 238, 0.2);
+    }
+}
+.experience-list .item-desc{
+    color: #666;
+    font-size: 13px;
+    line-height: 24px
+}
+.experience-list .item-desc a {
+    color: #666;
+}
+.experience-list .item-name {
+    margin-bottom: 10px;
+    line-height: 1.5;
+}
+
+/* 技能专长 */
+.skill-list {
+    padding: 0 20px;
+}
+.skill-list .skill-item {
+    margin-bottom: 20px;
+    position: relative;
+}
+.skill-list .skill-item:last-of-type {
+    margin-bottom: 0;
+}
+.skill-item .item-ps {
+    font-size: 12px;
+    color: #999;
+    margin-bottom: 10px;
+}
+.skill-item .item-progress-bar {
+    height: 4px;
+    background: #ccc;
+    position: relative;
+    overflow: hidden;
+    border-radius: 2px;
+}
+.skill-item .item-progress-bar .bar-percent {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to right, #02b592 18%, #00c09b, #02e0b5) no-repeat;
+    top: 0;
+    left: 0;
+    border-radius: 2px;
+    transform-origin: left top;
+}
+.skill-item.full .item-progress-bar .bar-percent {
+    transform: scaleX(1);
+}
+.skill-item.almost .item-progress-bar .bar-percent {
+    transform: scaleX(0.9);
+}
+.skill-item.varygood .item-progress-bar .bar-percent {
+    transform: scaleX(0.85);
+}
+.skill-item.handful .item-progress-bar .bar-percent {
+    transform: scaleX(0.8);
+}
+.skill-item.half .item-progress-bar .bar-percent {
+    transform: scaleX(0.6);
+}
+.skill-item:hover .item-progress-bar .bar-percent {
+    animation: progressInit 0.6s both;
+}
+@keyframes progressInit {
+    0% {
+        transform: scaleX(0);
+    }
+}
+.skill-item .item-summary {
+    position: absolute;
+    top: 4px;
+    right: 0;
+    font-size: 12px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    padding: 0 8px;
+    color: #999;
+    transform: scale(0.8);
+}
