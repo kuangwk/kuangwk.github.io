@@ -2,51 +2,17 @@
 <html>
 	<head>
 		<meta charset='utf-8'/>
-	</head>
-	<body>
-
-		<div class='item'>
-			<div class='cycle'>
-				<div class='box box1'>
-					<div class='round round1'></div>
-				</div>
-
-			<!-- 	<div class='box box2'>
-					<div class='round round2'></div>
-				</div> -->
-			</div>
-			<div class='dot'></div>
-			<img class='avatar' src='avatar.jpg'/>
-		</div>
-
-		<button onclick='trigger()'>click</button>
-
-		<script type="text/javascript">
-			// window.onload = function () {
-				var status = 'stop';
-				var cycle = document.getElementsByClassName('cycle')[0];
-				console.log(cycle);
-
-				function trigger() {
-					console.log(status);
-					if (status === 'stop') {
-						status = 'running';
-						cycle.className += ' rotate';
-
-					} else {
-						status = 'stop';
-						cycle.className = cycle.className.split(' ')[0];
-					}
-				}
-			// }
-		</script>
 		<style type="text/css">
 			body {
-				background-color: rgba(0,0,0,0.4); 
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+				justify-content: center;
+				margin-top: 200px;
+				background-color: #f68831;
 			}
 
 			div.item {
-				margin: 100px 0 0 100px;
 				position: relative;
 				display: inline-block;
 				background: #1c3044;
@@ -97,7 +63,7 @@
 
 			div.round {
 				position: absolute;
-				background: #00c19c; 
+				background: #00c19c;
 				width: 80px;
 				height: 80px;
 				-webkit-border-radius: 100px 100px;
@@ -133,7 +99,37 @@
 				background: #39b54a;
 				z-index: 2;
 				-webkit-border-radius: 10px;
-			}	
+			}
+			#list {
+				margin-top: 30px;
+				width: 500px;
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+			}
+			#list a{
+				color: #fff;
+			}
 		</style>
+	</head>
+	<body>
+
+		<div class='item'>
+			<div class='cycle'>
+				<div class='box box1'>
+					<div class='round round1'></div>
+				</div>
+
+			<!-- 	<div class='box box2'>
+					<div class='round round2'></div>
+				</div> -->
+			</div>
+			<div class='dot'></div>
+			<img class='avatar' src='avatar.jpg'/>
+		</div>
+
+		<div id='list'></div>
+		<script src='./map.js'></script>
+		<script src="./main.js"></script>
 	</body>
 </html>
